@@ -21,8 +21,8 @@ SELECT * FROM customers;
 
 CREATE TABLE orders (
 	order_id SERIAL PRIMARY KEY,
-	customer_id VARCHAR(50),
-	employee_id INT,
+	customer_id VARCHAR(50) REFERENCES customers(customer_id),
+	employee_id INT REFERENCES employees(employee_id),
 	order_date DATE,
 	ship_city VARCHAR(50)
 );
